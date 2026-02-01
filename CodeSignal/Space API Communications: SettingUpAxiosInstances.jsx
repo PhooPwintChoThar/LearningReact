@@ -7,9 +7,9 @@ export default function SpacePosts() {
   const [author, setAuthor] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  let response= axios.create({baseURL:'https://api-regional.codesignalcontent.com/posting-application-2/users'})
   useEffect(() => {
-    axios.get('https://api-regional.codesignalcontent.com/posting-application-2/users/2b0722g9-39d6-4acc-87bb-ee7c7339f880') // TODO: Update this code to have axios instance with predefined URL, and then update this call to get resource with the given ID.
+    response.get('2b0722g9-39d6-4acc-87bb-ee7c7339f880') // TODO: Update this code to have axios instance with predefined URL, and then update this call to get resource with the given ID.
       .then(response => {
         setAuthor(response.data);
         setLoading(false);
